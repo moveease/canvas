@@ -1,0 +1,19 @@
+.inner-hero {
+  background: linear-gradient(155deg, var(--ink) 0%, #241A13 55%, var(--tan-dark) 130%);
+  color: var(--white);
+  padding: 96px 24px 64px;
+}
+
+.inner-hero h1 {
+  font-size: clamp(2.2rem, 4.4vw, 3.2rem);
+  color: var(--white);
+  margin-top: 14px;
+  max-width: 720px;
+}
+
+.inner-hero p {
+  margin-top: 18px;
+  max-width: 560px;
+  color: rgba(251, 243, 231, 0.82);
+  font-size: 1.05rem;
+}

@@ -1,0 +1,83 @@
+.quote-form {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 34px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--line);
+}
+
+.quote-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 22px;
+}
+
+.quote-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.quote-field-wide {
+  grid-column: 1 / -1;
+}
+
+.quote-field input,
+.quote-field select,
+.quote-field textarea {
+  font-family: var(--font-body);
+  font-size: 0.96rem;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--line);
+  background: var(--cream);
+  color: var(--ink);
+  resize: vertical;
+}
+
+.quote-field input:focus,
+.quote-field select:focus,
+.quote-field textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  background: var(--white);
+}
+
+.quote-field-error {
+  color: #B3261E;
+  font-style: normal;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.quote-submit {
+  margin-top: 26px;
+  width: 100%;
+}
+
+.quote-status {
+  margin-top: 16px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.quote-status-success {
+  color: #2E7D32;
+}
+
+.quote-status-error {
+  color: #B3261E;
+}
+
+@media (max-width: 640px) {
+  .quote-form {
+    padding: 24px;
+  }
+  .quote-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
