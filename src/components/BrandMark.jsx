@@ -76,7 +76,7 @@ const speedLines = Array.from({ length: lineCount }).map((_, i) => {
       {/* top line of the box — left face's missing top edge */}
       <path
         className="brandmark-stroke brandmark-flap"
-        d="M142 170 L28 95"
+        d="M142 150 L28 95"
         stroke={stroke}
         strokeWidth="9"
         strokeLinecap="round"
@@ -84,7 +84,7 @@ const speedLines = Array.from({ length: lineCount }).map((_, i) => {
       {/* right face */}
       <path
         className="brandmark-stroke brandmark-right"
-        d="M266 95 L266 278 L145 337 L142 150 Z"
+        d="M266 95 L266 278 L145 323 L142 150 Z"
         stroke={stroke}
         strokeWidth="3"
         strokeLinejoin="round"
@@ -92,7 +92,7 @@ const speedLines = Array.from({ length: lineCount }).map((_, i) => {
       {/* Left bottom edge */}
       <path
         className="brandmark-stroke brandmark-bottom-left"
-        d="M19 265 L145 337"
+        d="M19 265 L145 323"
         stroke={stroke}
         strokeWidth="3"
         strokeLinecap="round"
@@ -107,7 +107,7 @@ const speedLines = Array.from({ length: lineCount }).map((_, i) => {
       />
       <path
         className="brandmark-stroke brandmark-top"
-        d="M142 170 L266 98"
+        d="M142 150 L266 97"
         stroke={stroke}
         strokeWidth="9"
         strokeLinecap="round"
@@ -124,7 +124,7 @@ const speedLines = Array.from({ length: lineCount }).map((_, i) => {
       />
       <path
         className="brandmark-stroke brandmark-flap"
-        d="M85 128 L136 98"
+        d="M95 122 L135 98"
         stroke={stroke}
         strokeWidth="9"
         strokeLinecap="round"

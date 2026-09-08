@@ -1,8 +1,8 @@
 /* ---------------- HERO ---------------- */
 .hero {
   position: relative;
-  background: radial-gradient(circle at 5% 0%, var(--tan-light) 0%, transparent 35%),
-    linear-gradient(155deg, var(--ink) 0%, #241A13 55%, var(--tan-dark) 140%);
+  background: radial-gradient(circle at 10% 15%, var(--tan-light) 0%, transparent 45%),
+    linear-gradient(155deg, var(--ink) 0%, #241A13 55%, var(--tan-dark) 130%);
   color: var(--cream);
   overflow: hidden;
 }
@@ -205,7 +205,7 @@
     justify-content: center;
   }
   .why-us-inner {
-    grid-template-columns: fr;
+    grid-template-columns: 1fr;
   }
   .steps-grid {
     grid-template-columns: 1fr;

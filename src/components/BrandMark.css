@@ -1,6 +1,7 @@
 .brandmark-stroke {
   fill: none;
   stroke-linecap: round;
+
 }
 
 .brandmark-speedline {
@@ -18,20 +19,25 @@
   stroke-dasharray: 480;
   stroke-dashoffset: 480;
   animation: brandmark-draw 0.9s ease forwards;
+  
 }
 
 .brandmark-animate .brandmark-left {
   animation-delay: 0.05s;
+  
 }
 
 .brandmark-animate .brandmark-right {
   animation-delay: 0.3s;
+  stroke: #F5B305;
 }
 
 .brandmark-animate .brandmark-flap {
   animation-delay: 0.6s;
   stroke-dasharray: 140;
   stroke-dashoffset: 140;
+  
+  
 }
 
 .brandmark-animate .brandmark-speedline {
@@ -44,6 +50,7 @@
   stroke-dashoffset: 180;
   animation: brandmark-draw 0.9s ease forwards;
   animation-delay: 0.5s;
+  stroke: #F5B305;
 }
 
 @keyframes brandmark-draw {

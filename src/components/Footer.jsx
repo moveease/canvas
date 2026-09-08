@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer-inner">
         <div className="footer-brand">
-          <img src="/assets/logo.jpeg" alt="MoveEase LLP logo" className="footer-logo" />
+          <img src="/assets/logo.jpg" alt="MoveEase LLP logo" className="footer-logo" />
           <div>
             <p className="footer-brand-name">MoveEase LLP</p>
             <p className="footer-tagline">Your reliability is our priority</p>
