@@ -41,7 +41,7 @@ export default function About() {
             <Link to="/contact" className="btn btn-dark">Talk to our team</Link>
           </div>
           <div className="about-story-mark">
-            <BrandMark variant="dark" animate={false} size={280} />
+            <BrandMark variant="light" animate={false} size={280} />
           </div>
         </div>
       </section>

@@ -4,7 +4,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
-# Set the loki-engine URL at build time, e.g.:
+# Set the backend URL at build time, e.g.:
 #   docker build --build-arg VITE_API_URL=https://api.yourdomain.com/api .
 ARG VITE_API_URL=http://localhost:8080/api
 ENV VITE_API_URL=$VITE_API_URL

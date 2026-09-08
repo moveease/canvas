@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { submitInquiry } from "../api/client";
 import "./QuoteForm.css";
-import validateForm from "../Validation/FormValidation";
 
 const SERVICE_OPTIONS = [
   "Packing & Unpacking",
@@ -30,29 +29,16 @@ export default function QuoteForm() {
   const [errors, setErrors] = useState({});
 
   function handleChange(e) {
-  const { name, value } = e.target;
+    const { name, value } = e.target;
+    setForm((f) => ({ ...f, [name]: value }));
+  }
 
-  setForm((f) => ({
-    ...f,
-    [name]: value,
-  }));
-  const fieldErrors = validateForm(name, value);
-  setErrors((prev) => ({
-    ...prev,
-    ...fieldErrors,
-    ...(Object.keys(fieldErrors).length === 0 && {
-      [name]: "",
-    }),
-  }));
-}
-async function handleSubmit(e) {
-  e.preventDefault();
-
-  setStatus("loading");
-  setErrors({});
-
-  try {
-    await submitInquiry(form);
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setStatus("loading");
+    setErrors({});
+    try {
+      await submitInquiry(form);
       setStatus("success");
       setForm(initialState);
     } catch (err) {
