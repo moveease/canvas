@@ -3,9 +3,74 @@ import {
   fetchAllInquiries,
   fetchAllUsers,
   updateInquiryStatus,
+  updateInquiryQuote,
 } from "../api/client";
 import "./InnerPage.css";
 import "./AdminPage.css";
+
+function QuoteCell({ inquiry, onSave }) {
+  const [editing, setEditing] = useState(false);
+  const [value, setValue] = useState(inquiry.quote?.quote || "");
+  const [saving, setSaving] = useState(false);
+
+  useEffect(() => {
+    setValue(inquiry.quote?.quote || "");
+  }, [inquiry.quote?.quote]);
+
+  async function handleSave() {
+    const trimmed = value.trim();
+
+    if (trimmed === (inquiry.quote?.quote || "")) {
+      setEditing(false);
+      return;
+    }
+
+    setSaving(true);
+    try {
+      await onSave(inquiry.id, trimmed);
+      setEditing(false);
+    } catch (err) {
+      alert("Failed to update quote.");
+    } finally {
+      setSaving(false);
+    }
+  }
+
+  function handleCancel() {
+    setValue(inquiry.quote?.quote || "");
+    setEditing(false);
+  }
+
+  if (editing) {
+    return (
+      <td>
+        <input
+          type="text"
+          className="quote-input"
+          value={value}
+          autoFocus
+          disabled={saving}
+          onChange={(e) => setValue(e.target.value)}
+          onBlur={handleSave}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") e.target.blur();
+            if (e.key === "Escape") handleCancel();
+          }}
+        />
+      </td>
+    );
+  }
+
+  return (
+    <td
+      className="quote-cell"
+      onClick={() => setEditing(true)}
+      title="Click to edit quote"
+    >
+      {inquiry.quote?.quote || "—"}
+    </td>
+  );
+}
 
 export default function AdminPage() {
   const [tab, setTab] = useState("inquiries");
@@ -53,6 +118,14 @@ export default function AdminPage() {
     } catch (err) {
       alert("Failed to update status.");
     }
+  }
+
+  async function handleQuoteSave(id, quoteValue) {
+    const updated = await updateInquiryQuote(id, quoteValue);
+
+    setInquiries((prev) =>
+      prev.map((inq) => (inq.id === id ? updated : inq))
+    );
   }
 
   return (
@@ -127,6 +200,7 @@ export default function AdminPage() {
                       <th>Service</th>
                       <th>Route</th>
                       <th>Move Date</th>
+                      <th>Quote</th>
                       <th>Status</th>
                       <th>Submitted</th>
                     </tr>
@@ -172,6 +246,11 @@ export default function AdminPage() {
                         <td>
                           {inq.moveDate || "—"}
                         </td>
+
+                        <QuoteCell
+                          inquiry={inq}
+                          onSave={handleQuoteSave}
+                        />
 
                         <td>
 

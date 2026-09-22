@@ -107,7 +107,12 @@ export default function UserPage() {
                         {formatStatus(item.status)}
                       </span>
                     </div>
-
+                    <div className="inquiry-quote">
+                      <span className="inquiry-quote-label">Quote</span>
+                      <span className={`inquiry-quote-value ${item.quote?.quote ? "" : "is-pending"}`}>
+                        {item.quote?.quote || "Pending"}
+                      </span>
+                    </div>
                     <p>
                       <strong>From:</strong> {item.fromLocation}
                     </p>
