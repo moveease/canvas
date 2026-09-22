@@ -21,5 +21,15 @@
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "vite": "^5.4.6"
-  }
+  },
+  "scripts": {
+  "dev": "vite",
+  "stage": "vite --mode stage",
+  "build": "vite build",
+  "build:stage": "vite build --mode stage",
+  "preview": "vite preview",
+  "lint": "eslint src"
 }
+  
+}
+

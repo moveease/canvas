@@ -5,6 +5,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
+import EnvBadge from "./components/EnvBadge";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import About from "./pages/About";
@@ -26,6 +27,7 @@ export default function App() {
   return (
     <AuthProvider>
       <ScrollToTop />
+      <EnvBadge />
       <Navbar />
       <main>
         <Routes>
