@@ -174,7 +174,36 @@
   color: var(--tan-dark);
 }
 
+.inquiry-quote {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--cream-deep);
+  border-radius: var(--radius-lg);
+  padding: 10px 16px;
+  margin-bottom: 16px;
+}
 
+.inquiry-quote-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tan-dark);
+}
+
+.inquiry-quote-value {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.inquiry-quote-value.is-pending {
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--tan-dark);
+}
 /* Responsive */
 
 @media (max-width: 600px) {
@@ -194,5 +223,5 @@
   .inquiry-grid {
     grid-template-columns: 1fr;
   }
-
+  
 }

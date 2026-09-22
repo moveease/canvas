@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { submitInquiry } from "../api/client";
 import "./QuoteForm.css";
+import { validateEmail } from "../validation/emailValidation";
+import {validatePhone} from "../validation/numberValidation";
 
 const SERVICE_OPTIONS = [
   "Packing & Unpacking",
@@ -28,10 +30,20 @@ export default function QuoteForm() {
   const [status, setStatus] = useState("idle"); // idle | loading | success | error
   const [errors, setErrors] = useState({});
 
-  function handleChange(e) {
-    const { name, value } = e.target;
-    setForm((f) => ({ ...f, [name]: value }));
+  const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function handleChange(e) {
+  const { name, value } = e.target;
+
+  setForm((f) => ({ ...f, [name]: value }));
+
+  if (name === "email") {
+    setErrors((err) => ({ ...err, email: validateEmail(value) }));
   }
+  if (name === "phone") {
+    setErrors((err) => ({ ...err, phone: validatePhone(value) }));
+  }
+}
 
   async function handleSubmit(e) {
     e.preventDefault();

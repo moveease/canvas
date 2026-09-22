@@ -74,3 +74,10 @@ export async function updateInquiryStatus(id, status) {
 
   return data;
 }
+export async function updateInquiryQuote(id, quoteValue) {
+  const { data } = await api.post(`/admin/inquiries/${id}/quote`, {
+    quote: { quote: quoteValue },
+  });
+
+  return data;
+}
